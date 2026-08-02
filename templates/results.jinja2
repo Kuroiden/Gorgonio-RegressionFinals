@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How's My Laptop's Battery Health?</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+      <h1 class="title">How's My Laptop's Battery Health?</h1>
+      <div id="Results">
+          <p>
+              Your laptop's current battery health is at
+              {% if battHealth >= 95 %}
+                <h1 class="great" id="resultText">
+              {% elif battHealth >= 80 and battHealth < 95 %}
+                <h1 class="good" id="resultText">
+              {% elif battHealth >= 70 and battHealth < 80 %}
+                <h1 class="fair" id="resultText">
+              {% elif battHealth < 70 %}
+                <h1 class="bad" id="resultText">
+              {% endif %}
+              <span id="percentage">{{ battHealth }}</span>%</h1>
+              <h2 id="comment">{{ comment }}</h2>
+              From the original <span id="maxCapInput">{{ maxCap }}</span>mAh, you can only charge up to <span id="resultingCap">{{ currCap }}</span>mAh.
+          </p>
+      </div>
+  </body>
+</html>

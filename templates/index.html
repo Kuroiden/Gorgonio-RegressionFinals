@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How's My Laptop's Battery Health?</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+      <h1 class="title">How's My Laptop's Battery Health?</h1>
+      <form id="FormArea" method="POST" action="/predict">
+          <div class="formSection">
+              <label for="age">Battery Age (Years)</label>
+              <input type="number" id="age" name="age" value="0" required>
+              <label for="usage">Daily Usage Hours</label>
+              <input type="number" step="1" id="usage" name="usage" value="0" required>
+          </div>
+          <br />
+          <div class="formSection">
+              <label for="gamer">I play games frequently</label>
+              <input type="checkbox" id="gamer" name="gamer" value="isGamer">
+              <label for="designCap">Original Battery Capacity (mAh)</label>
+              <input type="number" id="designCap" name="designCap" value="0" required>
+          </div>
+          <br />
+          <div class="formSection">
+              <label for="cycles">Charge-discharge Cycles Completed</label>
+              <input type="number" id="cycles" name="cycles" value="0" required>
+              <label for="cpu">CPU Usage (%)</label>
+              <input type="number" step="1" id="cpu" name="cpu" value="0" min="0" max="100" required>
+              <label for="gpu">GPU Usage (%)</label>
+              <input type="number" step="1" id="gpu" name="gpu" value="0" min="0" max="100" required>
+          </div>
+          <br />
+          <div class="formSection">
+              <label for="power">Average Power Consumption (W)</label>
+              <input type="number" step="1" id="power" name="power" value="25" min="0" required>
+              <label for="temp">Average Temperature (°C)</label>
+              <input type="number" step="1" id="temp" name="temp" value="35" min="0" required>
+          </div>
+          <br />
+          <input type="submit" id="sendInput" value="Check Health">
+      </form>
+  </body>
+</html>
